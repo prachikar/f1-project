@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
 
 const presets = [
   { id: "fast",     name: "Fast",     note: "Quick runs, lower complexity",           config: { train_end_year: 2015, n_estimators: 150, max_depth: 4,  class_weight: "balanced", random_state: 42 } },

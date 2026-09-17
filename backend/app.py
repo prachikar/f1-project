@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Optional
 
@@ -19,9 +20,14 @@ from src.evaluate import evaluate_model
 
 app = FastAPI(title="F1 Constructor Champion Predictor API")
 
+# Comma-separated list of extra allowed origins, e.g. your Vercel domain.
+# Set FRONTEND_ORIGIN=https://f1-project.vercel.app in the backend host's env vars.
+_extra_origins = [o.strip() for o in os.environ.get("FRONTEND_ORIGIN", "").split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", *_extra_origins],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
