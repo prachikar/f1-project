@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# Editors
+.idea/
+.vscode/
+.claude/settings.local.json
+
+# OS
+.DS_Store
+
+# Streamlit (keep config.toml tracked, ignore local secrets if any appear later)
+.streamlit/secrets.toml
