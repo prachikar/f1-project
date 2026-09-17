@@ -911,7 +911,7 @@ export default function App() {
         </div>
         <div className="hero-card">
           <p>API Status</p>
-          <a href={`${API_BASE}/health`} target="_blank" rel="noreferrer">localhost:8000</a>
+          <a href={`${API_BASE}/health`} target="_blank" rel="noreferrer">{API_BASE.replace(/^https?:\/\//, "")}</a>
         </div>
       </header>
 
