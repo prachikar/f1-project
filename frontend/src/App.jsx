@@ -3,9 +3,9 @@ import { useEffect, useMemo, useState } from "react";
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000";
 
 const presets = [
-  { id: "fast",     name: "Fast",     note: "Quick runs, lower complexity",           config: { train_end_year: 2015, n_estimators: 150, max_depth: 4,  class_weight: "balanced", random_state: 42 } },
+  { id: "fast",     name: "Fast",     note: "Quick runs, lower complexity",           config: { train_end_year: 2000, n_estimators: 150, max_depth: 4,  class_weight: "balanced", random_state: 42 } },
   { id: "balanced", name: "Balanced", note: "Solid default",                          config: { train_end_year: 2010, n_estimators: 300, max_depth: 6,  class_weight: "balanced", random_state: 42 } },
-  { id: "deep",     name: "Deep",     note: "More capacity, slower to train",         config: { train_end_year: 2000, n_estimators: 500, max_depth: 10, class_weight: "balanced", random_state: 42 } },
+  { id: "deep",     name: "Deep",     note: "More capacity, slower to train",         config: { train_end_year: 2020, n_estimators: 500, max_depth: 10, class_weight: "balanced", random_state: 42 } },
 ];
 
 const pages = [
